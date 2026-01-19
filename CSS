@@ -1,0 +1,158 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f2f5;
+    margin: 0;
+}
+
+.game-container { text-align: center; }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 10px;
+    margin: 20px auto;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background: white;
+    border: 2px solid #333;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.cell:hover { background-color: #e9ecef; }
+
+#status {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+body {
+    background-color: #0f0f1b; /* Dark background to make lights pop */
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff;
+    letter-spacing: 5px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background: #1a1a2e;
+    border: 2px solid #333;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: 0.3s;
+    /* This creates the 'light' glow effect around each cell */
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.cell:hover {
+    background: #252545;
+    box-shadow: 0 0 15px #00d4ff;
+    border-color: #00d4ff;
+}
+
+/* Specific colors for X and O */
+.cell[data-player="X"] {
+    color: #ff007b;
+    text-shadow: 0 0 10px #ff007b, 0 0 20px #ff007b;
+}
+
+.cell[data-player="O"] {
+    color: #00d4ff;
+    text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff;
+}
+
+#reset {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: transparent;
+    border: 2px solid #00d4ff;
+    color: #00d4ff;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#reset:hover {
+    background: #00d4ff;
+    color: #0f0f1b;
+    box-shadow: 0 0 20px #00d4ff;
+}
+/* The winning animation */
+@keyframes winner-glow {
+    0% { transform: scale(1); box-shadow: 0 0 10px #fff; }
+    50% { transform: scale(1.05); box-shadow: 0 0 30px #fff; }
+    100% { transform: scale(1); box-shadow: 0 0 10px #fff; }
+}
+
+.cell.winner {
+    animation: winner-glow 0.5s ease-in-out infinite;
+    z-index: 10;
+    border-color: white !important;
+    background: rgba(255, 255, 255, 0.1);
+}
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.celebrate-shake {
+    animation: shake 0.5s; 
+}
+/* Styling for the icons */
+.cell i {
+    font-size: 2.5rem;
+    pointer-events: none; /* Makes sure clicking the icon doesn't block the cell click */
+}
+
+/* X Icon - Neon Pink */
+.fa-xmark {
+    color: var(--neon-pink);
+    filter: drop-shadow(0 0 8px var(--neon-pink));
+}
+
+/* O Icon - Neon Blue */
+.fa-circle {
+    color: var(--neon-blue);
+    filter: drop-shadow(0 0 8px var(--neon-blue));
+}
